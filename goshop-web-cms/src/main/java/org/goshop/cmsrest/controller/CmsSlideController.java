@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping("/cms_slide")
 public class CmsSlideController {
 
-    @Autowired
+//    @Autowired
     CmsSlideService cmsSlideService;
 
     @RequestMapping("/new_slide")

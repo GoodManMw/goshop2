@@ -18,7 +18,7 @@ import java.util.Map;
 @RequestMapping("/cms_article_class")
 public class CmsArticleClassController {
 
-    @Autowired
+//    @Autowired
     CmsArticleClassService cmsArticleClassService;
 
     @RequestMapping("/query")

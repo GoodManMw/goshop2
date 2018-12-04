@@ -29,44 +29,41 @@ public class ArticleLanguageController {
 
     @RequestMapping("/query")
     @ResponseBody
-    public Object query(Model model,@RequestParam(value="cid",required=false) Long class_id,
-                           @RequestParam(value="p",required=false) Integer curPage,
-                           @RequestParam(value="p_year",required=false) String year,
-                            String callback,
-                            HttpServletRequest request,
-                           HttpServletResponse response) {
-        Locale locale = new SessionLocaleResolver().resolveLocale(request);
-        String lang=locale.getLanguage();
-        PageInfo<ArticleLangMain> page=articleLangService.findRetrenchPublishManyByArticleClassId(curPage, 6, class_id, year,lang);
-        return JsonUtils.jsonp(page, callback);
+    public Object query() {
+//        Locale locale = new SessionLocaleResolver().resolveLocale(request);
+//        String lang=locale.getLanguage();
+//        PageInfo<ArticleLangMain> page=articleLangService.findRetrenchPublishManyByArticleClassId(curPage, 6, class_id, year,lang);
+//        return JsonUtils.jsonp(page, callback);
+        articleLangService.findManyAll(1, 1);
+        return null;
     }
 
-    @RequestMapping("/image_query")
-    @ResponseBody
-    public Object imageQuery(Model model, @RequestParam(value="cid",required=false) Long class_id,
-                        @RequestParam(value="p",required=false) Integer curPage,
-                        @RequestParam(value="p_year",required=false) String year,
-                        String callback,
-                        HttpServletRequest request,
-                        HttpServletResponse response) {
-        Locale locale = new SessionLocaleResolver().resolveLocale(request);
-        String lang=locale.getLanguage();
-        PageInfo<ArticleLangMain> page=articleLangService.findRetrenchImagePublishManyByArticleClassId(curPage, 6, class_id, year,lang);
-        return JsonUtils.jsonp(page, callback);
-    }
-
-    @RequestMapping("/page")
-    @ResponseBody
-    public Object page(Model model,
-                       Long id,
-                       String callback,
-                       HttpServletRequest request,
-                       HttpServletResponse response) {
-        ArticleLangMain articleLangMain=articleLangService.findManyOne(id);
-        Assert.notNull(articleLangMain,"此文章已不存在！");
-        ArticleLangInfo info=articleLangMain.getArticleLangInfoList().get(0);
-        String content=info.getArticleContent().replaceAll("\\/admin\\/att", "http://211.149.161.219/admin/att");
-        info.setArticleContent(content);
-        return JsonUtils.jsonp(articleLangMain, callback);
-    }
+//    @RequestMapping("/image_query")
+//    @ResponseBody
+//    public Object imageQuery(Model model, @RequestParam(value="cid",required=false) Long class_id,
+//                        @RequestParam(value="p",required=false) Integer curPage,
+//                        @RequestParam(value="p_year",required=false) String year,
+//                        String callback,
+//                        HttpServletRequest request,
+//                        HttpServletResponse response) {
+//        Locale locale = new SessionLocaleResolver().resolveLocale(request);
+//        String lang=locale.getLanguage();
+//        PageInfo<ArticleLangMain> page=articleLangService.findRetrenchImagePublishManyByArticleClassId(curPage, 6, class_id, year,lang);
+//        return JsonUtils.jsonp(page, callback);
+//    }
+//
+//    @RequestMapping("/page")
+//    @ResponseBody
+//    public Object page(Model model,
+//                       Long id,
+//                       String callback,
+//                       HttpServletRequest request,
+//                       HttpServletResponse response) {
+//        ArticleLangMain articleLangMain=articleLangService.findManyOne(id);
+//        Assert.notNull(articleLangMain,"此文章已不存在！");
+//        ArticleLangInfo info=articleLangMain.getArticleLangInfoList().get(0);
+//        String content=info.getArticleContent().replaceAll("\\/admin\\/att", "http://211.149.161.219/admin/att");
+//        info.setArticleContent(content);
+//        return JsonUtils.jsonp(articleLangMain, callback);
+//    }
 }
