@@ -11,7 +11,7 @@
     <dubbo:application name="goshop-service-cms"  />
 
     <!-- 使用redis中心暴露发现服务地址-->
-    <dubbo:registry  address="${dubbo.address}"  check="false" />
+    <dubbo:registry  address="redis://127.0.0.1:6379"  check="false" />
     <!-- 使用multicast广播注册中心暴露发现服务地址
     <dubbo:registry address="multicast://224.5.6.7:1234?unicast=false" check="false"/>-->
     <!-- zookeeper注册中心
@@ -30,11 +30,11 @@
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service  retries="0" interface="org.goshop.cms.i.ArticleLangService" ref="articleLangService"  />
 
-    <dubbo:service  retries="0" interface="org.goshop.cms.i.CmsArticleClassService" ref="cmsArticleClassService"  />
+    <!--<dubbo:service  retries="0" interface="org.goshop.cms.i.CmsArticleClassService" ref="cmsArticleClassService"  />-->
 
-    <dubbo:service  retries="0" interface="org.goshop.cms.i.CmsArticleService" ref="cmsArticleService"  />
+    <!--<dubbo:service  retries="0" interface="org.goshop.cms.i.CmsArticleService" ref="cmsArticleService"  />-->
 
-    <dubbo:service  retries="0" interface="org.goshop.cms.i.CmsSlideService" ref="cmsSlideService"  />
+    <!--<dubbo:service  retries="0" interface="org.goshop.cms.i.CmsSlideService" ref="cmsSlideService"  />-->
 
 
 </beans>

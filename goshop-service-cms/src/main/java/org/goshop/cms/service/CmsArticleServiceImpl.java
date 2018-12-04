@@ -15,7 +15,7 @@ import java.util.List;
 @Service("cmsArticleService")
 public class CmsArticleServiceImpl implements CmsArticleService {
 
-    @Autowired
+//    @Autowired
     CmsArticleMapper cmsArticleMapper;
 
     @Override
