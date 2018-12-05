@@ -17,7 +17,7 @@
 	<!-- 扫描包加载Service实现类 -->
 	<context:component-scan base-package="org.goshop.cms.service" />
 
-	<!--<import resource="classpath:spring/applicationContext-dao.xml" />-->
+	<import resource="classpath:spring/applicationContext-dao.xml" />
 	<import resource="classpath:spring/applicationContext-jedis.xml" />
 	<import resource="classpath:spring/applicationContext-dubbo-provider.xml" />
 	<!--<import resource="classpath:spring/applicationContext-shiro.xml" />-->

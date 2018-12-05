@@ -11,7 +11,7 @@ import java.util.List;
 @Service("cmsSlideService")
 public class CmsSlideServiceImpl implements CmsSlideService {
 
-//    @Autowired
+    @Autowired
     CmsSlideMapper cmsSlideMapper;
 
     @Override
