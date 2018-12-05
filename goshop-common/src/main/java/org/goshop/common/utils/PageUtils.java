@@ -16,6 +16,6 @@ public class PageUtils {
         if (pageSize == null) {
             pageSize = 20;
         }
-//        PageHelper.startPage(curPage, pageSize);
+        PageHelper.startPage(curPage, pageSize);
     }
 }
