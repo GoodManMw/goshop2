@@ -26,6 +26,7 @@ goshop-facade-users/goshop-facade-users.iml
 goshop-service-cms/goshop-service-cms.iml
 goshop-service-users/goshop-service-users.iml
 goshop-web-manager/goshop-web-manager.iml
+goshop-service-cms/logs/
 
 # temp ignore
 *.log
